@@ -150,3 +150,8 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'postmaster@sandbox22bd68799ee741bcbce43fffe5e666d4.mailgun.org'
 EMAIL_HOST_PASSWORD = '87bccb0efa6681aaa5b176d7b9f784e0-4497bd1d-a3d2cbaa'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
