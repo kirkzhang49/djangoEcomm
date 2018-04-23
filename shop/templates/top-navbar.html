@@ -1,0 +1,64 @@
+<div class="container">
+  <div style ="text-align:right !important;">
+    <ul>
+      {% if request.user.is_authenticated and request.user.first_name %}
+      <li style="  list-style:none;
+        color:black;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-size: 12px;
+        padding-right: 20px;
+        display:inline;">
+        Welcome, <a href="#" class="dropdown-toggle"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">{{ request.user.first_name }} <i class="fas fa-user-circle"></i></a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a href="{% url 'order:order_history' %}"
+          class="dropdown-item">Order History</a>
+        </div>
+      </li>
+      <li  style="  list-style:none;
+        color:black;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-size: 12px;
+        padding-right: 20px;
+        display:inline;">
+        <a href="{% url 'signout' %}" style="text-decoration: none;
+          color:#000;
+          list-style:none;
+          text-transform: .2em;
+          font-size: 12px;">Sign Out <i class="fas fa-sign-out-alt"></i></a>
+      </li>
+      {% else %}
+      <li  style="  list-style:none;
+        color:black;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-size: 12px;
+        padding-right: 20px;
+        display:inline;">
+        <a href="{% url 'signup' %}" style="text-decoration: none;
+          color:#000;
+          list-style:none;
+          text-transform: .2em;
+          font-size: 12px;">Sign Up <i class="fas fa-sign-out-alt"></i></a>
+      </li>
+      <li  style="  list-style:none;
+        color:black;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        font-size: 12px;
+        padding-right: 20px;
+        display:inline;">
+        <a href="{% url 'signin' %}" style="text-decoration: none;
+          color:#000;
+          list-style:none;
+          text-transform: .2em;
+          font-size: 12px;">Sign In <i class="fas fa-sign-out-alt"></i></a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
